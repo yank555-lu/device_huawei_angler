@@ -39,6 +39,16 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 DISABLE_SLIM_FRAMEWORK := true
 
+# DEBUG
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb \
+    persist.logd.logpersistd=logcatd
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \
     BUILD_FINGERPRINT=google/angler/angler:8.1.0/OPM6.171019.030.K1/4947289:user/release-keys \
